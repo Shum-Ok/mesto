@@ -1,5 +1,9 @@
-.root {}
-.header {}
-.profile {}
-.elements {}
-.footer {}
+@import url(../vendor/normalize.css);
+/*@import url(../vendor/fonts/fonts.css);*/
+
+@import url(../bloсks/root/root.css);
+@import url(../bloсks/root/__header/root__header.css);
+
+
+@import url(../bloсks/header/header.css);
+@import url(../bloсks/logo/logo.css);
