@@ -3,4 +3,7 @@
 	font-weight: 900;
 	font-size: 24px;
 	color: #000;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }

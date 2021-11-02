@@ -29,3 +29,7 @@
 @import url(../blocks/element/__text/element__text.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__heart/element__heart.css);
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/root/__footer/root__footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
