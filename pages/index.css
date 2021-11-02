@@ -1,5 +1,5 @@
 @import url(../vendor/normalize.css);
-/*@import url(../vendor/fonts/fonts.css);*/
+@import url(../fonts/InterWeb/inter.css);
 
 @import url(../blocks/root/root.css);
 @import url(../blocks/root/__header/root__header.css);
@@ -7,3 +7,16 @@
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/logo/logo.css);
+
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/root/__profile/root__profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__user-name/profile__user-name.css);
+@import url(../blocks/profile/__user-info/profile__user-info.css);
+
+@import url(../blocks/edit-profile/edit-profile.css);
+@import url(../blocks/edit-profile/__icon/edit-profile__icon.css);
+
+@import url(../blocks/add-button/add-button.css);
+@import url(../blocks/add-button/__icon/add-button__icon.css);

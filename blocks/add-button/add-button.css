@@ -1,0 +1,8 @@
+.add-button {
+	display: flex;
+	width: 150px;
+	height: 50px;
+	border: 2px solid #fff;
+	border-radius: 2px;
+	box-sizing: border-box;
+}
