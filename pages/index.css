@@ -20,3 +20,12 @@
 
 @import url(../blocks/add-button/add-button.css);
 @import url(../blocks/add-button/__icon/add-button__icon.css);
+
+@import url(../blocks/elements/elements.css);
+
+@import url(../blocks/element/element.css);
+@import url(../blocks/root/__elements/root__elements.css);
+@import url(../blocks/element/__photo/element__photo.css);
+@import url(../blocks/element/__text/element__text.css);
+@import url(../blocks/element/__title/element__title.css);
+@import url(../blocks/element/__heart/element__heart.css);
