@@ -6,3 +6,16 @@
 	gap: 20px 17px;
 	margin: 0 auto;
 }
+
+@media (max-width: 974px) {
+	.elements {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 680px) {
+	.elements {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

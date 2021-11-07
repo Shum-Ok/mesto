@@ -5,4 +5,13 @@
 	border: 2px solid #fff;
 	border-radius: 2px;
 	box-sizing: border-box;
+	background-color: #000;
+	grid-area: add-button;
+	
+}
+
+@media (max-width: 740px) {
+	.add-button {
+		width: 282px;
+	}
 }

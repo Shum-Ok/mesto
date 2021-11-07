@@ -5,3 +5,9 @@
 	align-items: baseline;
 	max-width: 336px;
 }
+
+@media (max-width: 680px) {
+	.profile__info {
+		max-width: 282px;
+	}
+}

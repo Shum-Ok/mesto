@@ -7,3 +7,9 @@
 	margin: 0 45px;
 	font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
 }
+
+@media (max-width: 400px) {
+	.root {
+		margin: 0 auto;
+	}
+}

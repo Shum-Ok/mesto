@@ -1,0 +1,16 @@
+.profile__add-button {
+	margin-left: auto;
+	margin-top: 35px;
+}
+
+@media (max-width: 740px) {
+	.profile__add-button {
+		margin: 30px auto 0;
+	}
+}
+
+@media (max-width: 680px) {
+	.profile__add-button {
+		margin: 0 auto;
+	}
+}
