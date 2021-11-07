@@ -9,7 +9,6 @@
 	grid-area: profile__user-name;
 }
 
-
 @media (max-width: 680px) {
 	.profile__user-name {
 		font-size: 27px;
