@@ -22,4 +22,4 @@
 
 **Ссылка на GitHub Pages**
 
-* [Ссылка на GitHub Pages](https://shum-ok.github.io/yet-another-project/)
+* [Ссылка на GitHub Pages](https://shum-ok.github.io/mesto/)
