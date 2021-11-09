@@ -1,10 +1,14 @@
 .edit-profile {
 	display: flex;
-	width: 24px;
-	height: 24px;
+	max-width: 24px;
+	max-height: 24px;
 	border: 1px solid #fff;
 	box-sizing: border-box;
 	background: none;
 	cursor: pointer;
 	grid-area: edit-profile;
+}
+
+.edit-profile:hover {
+	opacity: 0.6;
 }

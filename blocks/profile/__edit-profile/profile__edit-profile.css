@@ -10,7 +10,9 @@
 
 @media (max-width: 680px) {
 	.profile__edit-profile {
-		margin-top: 8px;
-		margin-left: 6px;
+		max-width: 22px;
+		max-height: 22px;
+		margin-top: 13px;
+		margin-left: 9px;
 	}
 }

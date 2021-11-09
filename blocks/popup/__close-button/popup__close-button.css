@@ -9,6 +9,10 @@
 	background: none;
 }
 
+.popup__close-button:hover {
+  opacity: 0.6;
+}
+
 .popup__close-button::before {
 	position: absolute;
 	content: '';
@@ -28,7 +32,7 @@
 }
 
 @media (max-width: 580px) {
-		.popup__close-button {
+	.popup__close-button {
 		right: -9px;
 		top: -37px;
 	}

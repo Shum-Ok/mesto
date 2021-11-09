@@ -1,17 +1,20 @@
 .add-button {
 	display: flex;
-	width: 150px;
-	height: 50px;
+	min-width: 150px;
+	max-height: 50px;
 	border: 2px solid #fff;
 	border-radius: 2px;
 	box-sizing: border-box;
 	background-color: #000;
 	grid-area: add-button;
-	
+}
+
+.add-button:hover {
+	opacity: 0.6;
 }
 
 @media (max-width: 740px) {
 	.add-button {
-		width: 282px;
+		min-width: 282px;
 	}
 }

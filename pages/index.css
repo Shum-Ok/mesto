@@ -1,5 +1,5 @@
 @import url(../vendor/normalize.css);
-@import url(../fonts/InterWeb/inter.css);
+@import url(../vendor/fonts/InterWeb/inter.css);
 
 @import url(../blocks/root/root.css);
 
@@ -11,7 +11,6 @@
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/root/__profile/root__profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
-@import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__user-name/profile__user-name.css);
 @import url(../blocks/profile/__user-jop/profile__user-jop.css);
 
