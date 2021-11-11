@@ -1,9 +1,9 @@
 .root__elements {
-	margin-top: 50px;
+  margin-top: 50px;
 }
 
 @media (max-width: 680px) {
-	.root__elements {
-		margin-top: 36px;
-	}
+  .root__elements {
+    margin-top: 36px;
+  }
 }

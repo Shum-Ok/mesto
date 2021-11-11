@@ -1,12 +1,12 @@
 .root__header {
-	padding-bottom: 41px;
-	margin: 45px auto 0;
-	width: 100%;
+  padding-bottom: 41px;
+  margin: 45px auto 0;
+  width: 100%;
 }
 
 @media (max-width: 400px) {
-	.root__header {
-		margin-top: 28px;
-		padding-bottom: 35px;
-	}
+  .root__header {
+    margin-top: 28px;
+    padding-bottom: 35px;
+  }
 }

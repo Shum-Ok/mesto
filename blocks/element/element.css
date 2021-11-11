@@ -1,6 +1,6 @@
 .element {
-	display: flex;
-	flex-direction: column;
-	max-width: 282px;
-	box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-width: 282px;
+  box-sizing: border-box;
 }

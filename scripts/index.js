@@ -10,11 +10,11 @@ let jobInput = document.querySelector('.popup__user-jop'); // Воспользу
 
 
 function openPopup() {
-	popupElement.classList.remove('popup_opened');
+  popupElement.classList.remove('popup_opened');
 }
 
 function closePopup() {
-	popupElement.classList.add('popup_opened');
+  popupElement.classList.add('popup_opened');
 }
 
 editProfile.addEventListener('click', openPopup)
@@ -29,13 +29,13 @@ jobInput.value = userJop.textContent;
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 function formSubmitHandler (evt) {
-	evt.preventDefault();
+  evt.preventDefault();
 
-	// Получите значение полей из свойства value
-	userName.textContent = nameInput.value;
-	userJop.textContent = jobInput.value;
+  // Получите значение полей из свойства value
+  userName.textContent = nameInput.value;
+  userJop.textContent = jobInput.value;
 
-	closePopup();
+  closePopup();
 }
 
 // Прикрепляем обработчик к форме:

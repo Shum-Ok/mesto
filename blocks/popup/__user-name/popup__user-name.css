@@ -1,18 +1,18 @@
 .popup__user-name {
-	box-sizing: border-box;
-	border: none;
-	border-bottom: 1px solid rgba(0,0,0,0.2);
-	max-width: 358px;
-	width: 100%;
-	padding-bottom: 9px;
-	margin: 50px auto 0;
-	outline: none;
-	font-size: 14px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  max-width: 358px;
+  width: 100%;
+  padding-bottom: 9px;
+  margin: 50px auto 0;
+  outline: none;
+  font-size: 14px;
 }
 
 @media (max-width: 580px) {
-	.popup__user-name {
-		max-width: 238px;
-		margin-top: 74px;
-	}
+  .popup__user-name {
+    max-width: 238px;
+    margin-top: 74px;
+  }
 }

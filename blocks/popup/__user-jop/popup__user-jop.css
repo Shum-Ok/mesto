@@ -1,18 +1,18 @@
 .popup__user-jop {
-	box-sizing: border-box;
-	border: none;
-	border-bottom: 1px solid rgba(0,0,0,0.2);
-	max-width: 358px;
-	width: 100%;
-	padding-bottom: 7px;
-	margin: 29px auto 0;
-	outline: none;
-	font-size: 14px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  max-width: 358px;
+  width: 100%;
+  padding-bottom: 7px;
+  margin: 29px auto 0;
+  outline: none;
+  font-size: 14px;
 }
 
 @media (max-width: 580px) {
-	.popup__user-jop {
-		max-width: 238px;
-		margin-top: 30px;
-	}
+  .popup__user-jop {
+    max-width: 238px;
+    margin-top: 30px;
+  }
 }
