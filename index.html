@@ -10,83 +10,83 @@
   <header class="header root__header">
     <img src="./images/logo.svg" alt="Логотип" class="logo root__logo">
   </header>
-
-  <section class="profile root__profile">
-    <img src="./images/avatar.jpg" alt="Фото профеля" class="profile__avatar">
-      <h1 class="profile__user-name">Жак-Ив Кусто</h1>
-      <p class="profile__user-jop">Исследователь океана</p>
-      <button type="button" class="edit-profile profile__edit-profile">
-        <img src="./images/icon-edit.svg" alt="Редактировать профиль" class="edit-profile__icon">
+  <main class="content">
+    <section class="profile content__profile">
+      <img src="./images/avatar.jpg" alt="Фото профеля" class="profile__avatar">
+        <h1 class="profile__user-name">Жак-Ив Кусто</h1>
+        <p class="profile__user-jop">Исследователь океана</p>
+        <button type="button" class="edit-profile profile__edit-profile">
+          <img src="./images/icon-edit.svg" alt="Редактировать профиль" class="edit-profile__icon">
+        </button>
+      <button type="button" class="add-button profile__add-button">
+        <img src="./images/icon-add.svg" alt="Добавить" class="add-button__icon">
       </button>
-    <button type="button" class="add-button profile__add-button">
-      <img src="./images/icon-add.svg" alt="Добавить" class="add-button__icon">
-    </button>
-  </section>
-
-  <section class="elements root__elements">
-    <div class="element">
-      <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="фото" class="element__photo">
-      <div class="element__text">
-        <h2 class="element__title">Карачаевск</h2>
-        <button class="element__heart"></button>
-      </div>
-    </div>
-
-    <div class="element">
-      <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="фото" class="element__photo">
-      <div class="element__text">
-        <h2 class="element__title">Гора Эльбрус</h2>
-        <button class="element__heart"></button>
-      </div>
-    </div>
-
-    <div class="element">
-      <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="фото" class="element__photo">
-      <div class="element__text">
-        <h2 class="element__title">Домбай</h2>
-        <button class="element__heart"></button>
-      </div>
-    </div>
-
-    <div class="element">
-      <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="фото" class="element__photo">
-      <div class="element__text">
-        <h2 class="element__title">Гора Эльбрус</h2>
-        <button class="element__heart"></button>
-      </div>
-    </div>
-
-    <div class="element">
-      <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="фото" class="element__photo">
-      <div class="element__text">
-        <h2 class="element__title">Домбай</h2>
-        <button class="element__heart"></button>
-      </div>
-    </div>
-
-    <div class="element">
-      <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="фото" class="element__photo">
-      <div class="element__text">
-        <h2 class="element__title">Карачаево-Черкессия</h2>
-        <button class="element__heart"></button>
-      </div>
-    </div>
-  </section>
-
+    </section>
+  
+    <section class="elements content__elements">
+      <article class="element">
+        <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="фото" class="element__photo">
+        <div class="element__text">
+          <h2 class="element__title">Карачаевск</h2>
+          <button type="button" class="element__heart"></button>
+        </div>
+      </article>
+  
+      <article class="element">
+        <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="фото" class="element__photo">
+        <div class="element__text">
+          <h2 class="element__title">Гора Эльбрус</h2>
+          <button type="button" class="element__heart"></button>
+        </div>
+      </article>
+  
+      <article class="element">
+        <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="фото" class="element__photo">
+        <div class="element__text">
+          <h2 class="element__title">Домбай</h2>
+          <button type="button" class="element__heart"></button>
+        </div>
+      </article>
+  
+      <article class="element">
+        <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="фото" class="element__photo">
+        <div class="element__text">
+          <h2 class="element__title">Гора Эльбрус</h2>
+          <button type="button" class="element__heart"></button>
+        </div>
+      </article>
+  
+      <article class="element">
+        <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="фото" class="element__photo">
+        <div class="element__text">
+          <h2 class="element__title">Домбай</h2>
+          <button type="button" class="element__heart"></button>
+        </div>
+      </article>
+  
+      <article class="element">
+        <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="фото" class="element__photo">
+        <div class="element__text">
+          <h2 class="element__title">Карачаево-Черкессия</h2>
+          <button type="button" class="element__heart"></button>
+        </div>
+      </article>
+    </section>
+  </main>
   <footer class="footer root__footer">
-    <p class="footer__copyright">&#64; 2020 Mesto Russia</p>
+    <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
   </footer>
 
-  <div class="popup popup_opened">
-    <section class="popup__window">
-      <button class="popup__close-button"></button>
-      <form class="popup__form">
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <input type="text" name="user-name" class="popup__user-name">
-        <input type="text" name="user-jop" class="popup__user-jop">
+  <div class="popup">
+    <div class="popup__window">
+      <button type="button" class="popup__close-button"></button>
+      <form name="popupForm" class="popup__form">
+        <p class="popup__title">Редактировать профиль</p>
+        <input type="text" name="user-name" class="popup__input popup__input_string_name popup__input_margins_user-name">
+        <input type="text" name="user-jop" class="popup__input popup__input_string_jop popup__input_margins_user-jop">
         <button type="submit" class="popup__save-button">Сохранить</button>
       </form>
-    </section>
+    </div>
   </div>
   <script src="./scripts/index.js"></script>
 </body>

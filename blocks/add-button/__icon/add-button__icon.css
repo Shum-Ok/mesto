@@ -1,3 +1,10 @@
 .add-button__icon {
   margin: auto;
 }
+
+@media (max-width: 740px) {
+  .add-button__icon {
+    width: 16px;
+    height: 16px;
+  }
+}

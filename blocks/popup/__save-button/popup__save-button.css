@@ -9,7 +9,7 @@
   line-height: 22px;
   text-align: center;
   text-decoration: none;
-  margin: 48px auto 0;
+  margin: 48px auto 37px;
   cursor: pointer;
 }
 
@@ -24,5 +24,6 @@
     font-size: 14px;
     line-height: 17px;
     margin-top: 45px;
+    margin-bottom: 25px;
   }
 }

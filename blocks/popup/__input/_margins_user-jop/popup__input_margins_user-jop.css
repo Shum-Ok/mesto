@@ -1,0 +1,11 @@
+.popup__input_margins_user-jop {
+  padding-bottom: 7px;
+  margin: 29px auto 0;
+}
+
+@media (max-width: 580px) {
+  .popup__input_margins_user-jop {
+    max-width: 238px;
+    margin-top: 30px;
+  }
+}

@@ -5,13 +5,11 @@
   background-color: #fff;
   max-width: 430px;
   width: 100%;
-  min-height: 330px;
   margin: 0 auto 0;
 }
 
 @media (max-width: 580px) {
   .popup__window {
     max-width: 282px;
-    min-height: 322px;
   }
 }

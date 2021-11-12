@@ -1,3 +1,10 @@
 .edit-profile__icon {
   margin: auto;
 }
+
+@media (max-width: 740px) {
+  .edit-profile__icon {
+    width: 7.5px;
+    height: 7.5px;
+  }
+}
