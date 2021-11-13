@@ -4,7 +4,7 @@
   grid-template-areas:
   "profile__avatar profile__user-name edit-profile add-button"
   "profile__avatar profile__user-jop edit-profile add-button";
-  grid-template-columns: 150px 312px 1fr 150px;
+  grid-template-columns: 150px 312px 1fr 1fr;
   grid-template-rows: 72px 1fr;
 }
 
