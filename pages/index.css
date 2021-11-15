@@ -46,5 +46,5 @@
 @import url(../blocks/popup/__save-button/popup__save-button.css);
 
 @import url(../blocks/popup/__input/popup__input.css);
-@import url(../blocks/popup/__input/_name/popup__input_name.css);
-@import url(../blocks/popup/__input/_jop/popup__input_jop.css);
+@import url(../blocks/popup/__input/_string/popup__input_string_name.css);
+@import url(../blocks/popup/__input/_string/popup__input_string_jop.css);

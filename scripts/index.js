@@ -5,8 +5,8 @@ const closeButton = document.querySelector('.popup__close-button'); //перем
 const userName = document.querySelector('.profile__user-name'); //переменная касса имени профиля на странице
 const userJop = document.querySelector('.profile__user-jop'); //переменная касса работы на странице
 
-let nameInput = document.querySelector('.popup__input_name'); // Воспользуйтесь инструментом .querySelector()
-let jobInput = document.querySelector('.popup__input_jop'); // Воспользуйтесь инструментом .querySelector()
+let nameInput = document.querySelector('.popup__input_string_name'); // Воспользуйтесь инструментом .querySelector()
+let jobInput = document.querySelector('.popup__input_string_jop'); // Воспользуйтесь инструментом .querySelector()
 
 let formElement = document.querySelector('.popup__form'); // Находим форму в DOM
 
