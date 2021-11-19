@@ -1,6 +1,8 @@
 .element {
+  position: relative;
   display: grid;
   grid-template-columns: 282px;
   grid-template-rows: 282px 80px;
   box-sizing: border-box;
+  overflow: hidden;
 }

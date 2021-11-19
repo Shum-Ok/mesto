@@ -1,0 +1,18 @@
+.element__heart-active {
+  width: 22px;
+  height: 19px;
+  padding-left: 25px;
+  padding-right: 35px;
+  background-color: transparent;
+  background-image: url(../../../images/heart-active.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  align-self: center;
+  border: none;
+  cursor: pointer;
+}
+
+.element__like-active:hover {
+  opacity: 0.5;
+}
