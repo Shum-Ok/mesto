@@ -4,15 +4,15 @@ const userJop = document.querySelector('.profile__user-jop'); //переменн
 const popupTypeEdit = document.querySelector('.popup_type_edit'); // Ключ для popup'а редактирования профиля
 const nameInput = document.querySelector('.popup__input_string_name'); // Ключ для строки профиля в popup'е
 const jobInput = document.querySelector('.popup__input_string_jop'); // Ключ для строки профиля в popup'е
-const closeButton = popupTypeEdit.querySelector('.popup__close-button'); //переменная закрыть popup редактирования Профиля
-const saveButtonProfile = popupTypeEdit.querySelector('.popup__form'); // Кнопка сохранить в popup'е профиля
+const closeProfileButton = popupTypeEdit.querySelector('.popup__close-button'); //переменная закрыть popup редактирования Профиля
+const profileForm = popupTypeEdit.querySelector('.popup__form'); // Кнопка сохранить в popup'е профиля
 
 const addButton = document.querySelector('.add-button'); // переменная кнопки добавления "Места" 
 const popupTypeCard = document.querySelector('.popup_type_card'); // Ключ для popup'а добавлядения места
 const inputCardName = popupTypeCard.querySelector('.popup__input_card_name'); // Ключ для строки профиля в popup'е
 const inputCardUrl = popupTypeCard.querySelector('.popup__input_card_url'); // Ключ для строки профиля в popup'е
 const closeButtonCard = popupTypeCard.querySelector('.popup__close-button'); //переменная закрыть popup редактирования "Места"
-const saveButtonCard = popupTypeCard.querySelector('.popup__form'); // Форма popup'а в редактировании профиля
+const addCardForm = popupTypeCard.querySelector('.popup__form'); // Форма popup'а в редактировании профиля
 
 const elements = document.querySelector('.elements');
 const template = document.querySelector('.template'); // переменная блока карточки
@@ -93,18 +93,20 @@ function openPopupProfile() {
   jobInput.value = userJop.textContent;
 }
 
-function formSubmitHandlerProfile (evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   userName.textContent = nameInput.value; // Получите значение полей из свойства value
   userJop.textContent = jobInput.value;
   closePopup(popupTypeEdit);
 }
 
-function formSubmitHandlerCard(evt) {
+function handleCardFormSubmit(evt) {
   evt.preventDefault();
   elements.prepend(
     createCard({ name: inputCardName.value, link: inputCardUrl.value })
   );
+  inputCardName.value = '';
+  inputCardUrl.value = ''; 
   closePopup(popupTypeCard);
 }
 
@@ -115,8 +117,8 @@ function deleteCard(evt) {
 closeButtonCard.addEventListener('click', () => closePopup(popupTypeCard)); // закрывает popup длбавления места
 addButton.addEventListener('click', () => openPopup(popupTypeCard)); // открывает popup добавления места
 editProfile.addEventListener('click', openPopupProfile);
-closeButton.addEventListener('click', () => closePopup(popupTypeEdit));
-saveButtonProfile.addEventListener('submit', formSubmitHandlerProfile);
-saveButtonCard.addEventListener('submit', formSubmitHandlerCard);
+closeProfileButton.addEventListener('click', () => closePopup(popupTypeEdit));
+profileForm.addEventListener('submit', handleProfileFormSubmit);
+addCardForm.addEventListener('submit', handleCardFormSubmit);
 closeButtonImage.addEventListener('click', () => closePopup(popupImage));
 elements.append(...result);
