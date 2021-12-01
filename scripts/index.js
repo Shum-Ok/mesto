@@ -14,6 +14,15 @@ const inputCardUrl = popupTypeCard.querySelector('.popup__input_card_url'); // �
 const closeButtonCard = popupTypeCard.querySelector('.popup__close-button'); //переменная закрыть popup редактирования "Места"
 const addCardForm = popupTypeCard.querySelector('.popup__form'); // Форма popup'а в редактировании профиля
 
+enableValidation({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save-button',
+  inactiveButtonClass: 'popup__save-button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible',
+});
+
 const elements = document.querySelector('.elements');
 const template = document.querySelector('.template'); // переменная блока карточки
 const initialCards = [
@@ -79,6 +88,7 @@ const result = initialCards.map((item) => {
 });
 
 
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
 }
@@ -122,3 +132,17 @@ profileForm.addEventListener('submit', handleProfileFormSubmit);
 addCardForm.addEventListener('submit', handleCardFormSubmit);
 closeButtonImage.addEventListener('click', () => closePopup(popupImage));
 elements.append(...result);
+
+document.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
+});
+
+document.addEventListener('mousedown', function (evt) {
+  const openedPopup = document.querySelector('.popup_opened');
+  if (evt.target === openedPopup) {
+    closePopup(openedPopup);
+  }
+});
