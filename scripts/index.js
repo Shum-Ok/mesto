@@ -13,6 +13,10 @@ const inputCardName = popupTypeCard.querySelector('.popup__input_card_name'); //
 const inputCardUrl = popupTypeCard.querySelector('.popup__input_card_url'); // Ключ для строки профиля в popup'е
 const closeButtonCard = popupTypeCard.querySelector('.popup__close-button'); //переменная закрыть popup редактирования "Места"
 const addCardForm = popupTypeCard.querySelector('.popup__form'); // Форма popup'а в редактировании профиля
+const saveButtonCards = addCardForm.querySelector('.popup__save-button');
+
+const imgUrl = document.querySelector('.popup__image-url');
+const imgName = document.querySelector('.popup__image-name');
 
 enableValidation({
   formSelector: '.popup__form',
@@ -67,11 +71,11 @@ const createCard = (item) => {
   }
   buttonLike.addEventListener('click', likeCard);
 
-  function openPhoto(photo) {
+  function openPhoto() {
     openPopup(popupImage);
-    photo.querySelector('.popup__image-url').src = item.link;
-    photo.querySelector('.popup__image-url').alt = item.name;
-    photo.querySelector('.popup__image-name').textContent = item.name;
+    imgUrl.src = item.link;
+    imgUrl.alt = item.name;
+    imgName.textContent = item.name;
   }
 
   newCard
@@ -126,14 +130,17 @@ function handleProfileFormSubmit(evt) {
   userName.textContent = nameInput.value; // Получите значение полей из свойства value
   userJop.textContent = jobInput.value;
   closePopup(popupTypeEdit);
-}
+};
 
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
   elements.prepend(
     createCard({ name: inputCardName.value, link: inputCardUrl.value })
   );
+  inputCardName.value = ''; 
+  inputCardUrl.value = '';
   closePopup(popupTypeCard);
+  toggleButtonState(addCardForm, saveButtonCards, 'popup__save-button_disabled');
 }
 
 function deleteCard(evt) {
