@@ -6,12 +6,16 @@ import { FormValidator } from './FormValidator.js'
 // Массив из объектов стандартных карточек
 const initialCards = [
   {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    name: 'Воронеж',
+    link: 'https://static.tildacdn.com/tild3062-3332-4562-b961-353139363065/4061-voronezh-admira.jpg'
   },
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    name: 'Хабаровск',
+    link: 'https://alarmtrade.ru/wp-content/uploads/2020/11/8747.jpg'
+  },
+  {
+    name: 'Воицкий Падун',
+    link: 'https://avatars.mds.yandex.net/get-zen_doc/2442582/pub_5f23bcaae0739b7429bc0ef2_5f23be46b85040691c389331/scale_1200'
   },
   {
     name: 'Иваново',
@@ -28,10 +32,6 @@ const initialCards = [
   {
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  },
-  {
-    name: 'Хабаровск',
-    link: 'https://alarmtrade.ru/wp-content/uploads/2020/11/8747.jpg'
   },
 ];
 
@@ -55,8 +55,6 @@ const inputCardName = popupTypeCard.querySelector('.popup__input_card_name');
 const inputCardUrl = popupTypeCard.querySelector('.popup__input_card_url'); 
 const closeButtonCard = popupTypeCard.querySelector('.popup__close-button');
 const addCardForm = popupTypeCard.querySelector('.popup__form');
-const saveButtonCards = addCardForm.querySelector('.popup__save-button');
-
 
 // Для popup'a открытой карточки
 const popupImage = document.querySelector('.popup_type_image');
@@ -73,19 +71,15 @@ const jobInput = document.querySelector('.popup__input_string_jop');
 const userName = document.querySelector('.profile__user-name');
 const userJop = document.querySelector('.profile__user-jop');
 const profileForm = popupTypeEdit.querySelector('.popup__form');
-const saveButtonProfile = profileForm.querySelector('.popup__save-button');
 
-/* Запуск Function */
+/* Проходит по массиву и создает карточки */
 initialCards.forEach(item => {
   const card = new Card(item, template, handleCardClick);
   card.getView(elements); // elements - это где будут отображаться карточки
 })
 
-// функция ищет все формы с классом popup__form и запускает для каждой setEventListeners
-//enableValidation(validationConfig)
-
 /* Function */
-
+// Функция запуска валидации
 function startValidation(config) {
   const { formSelector } = config
   const forms = document.querySelectorAll(formSelector)
@@ -95,8 +89,7 @@ function startValidation(config) {
   })
 }
 
-startValidation(validationConfig)
-
+// Функция создания карточки
 function createNewCard(e) {
   e.preventDefault();
   const card = new Card({name: inputCardName.value, link: inputCardUrl.value}, template, handleCardClick);
@@ -105,7 +98,6 @@ function createNewCard(e) {
   inputCardUrl.value = '';
   closePopup(popupTypeCard);
   startValidation(validationConfig)
-  //toggleButtonState(addCardForm, saveButtonCards, validationConfig)
 }
 
 // открывает popup карточки
@@ -124,7 +116,6 @@ function openPopupProfile() {
   nameInput.value = userName.textContent;
   jobInput.value = userJop.textContent;
   startValidation(validationConfig)
-  //toggleButtonState(profileForm, saveButtonProfile, validationConfig)
 };
 
 function handleProfileFormSubmit(evt) {
@@ -161,8 +152,11 @@ function clickOverlay (evt) {
   };
 };
 
-/* EventListeners */
+/* Запуск функций */
+// Запуск функции валидации
+startValidation(validationConfig)
 
+/* EventListeners */
 // Popup добавления нового места
 addCardForm.addEventListener('submit', createNewCard);
 addButton.addEventListener('click', () => openPopup(popupTypeCard)); // открывает popup добавления места
