@@ -1,58 +1,58 @@
+// функция спрятать ошибки заполнения полей если валидна
 const hideInputError = (formElement, inputElement, config) => {
-    const { inputErrorClass, errorClass, } = config;
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove(inputErrorClass);
-    errorElement.classList.remove(errorClass);
-    errorElement.textContent = '';
+  const { inputErrorClass, errorClass, } = config
+  const errorElement = formElement.querySelector(`#${inputElement.id}-error`) // нашли id span елемента
+  inputElement.classList.remove(inputErrorClass)
+  errorElement.classList.remove(errorClass)
+  errorElement.textContent = ''
+}
+
+// функция показать ошибки заполения полей если НЕ валидна
+const showInputError = (formElement, inputElement, config) => {
+  const { inputErrorClass, errorClass, } = config
+  const errorElement = formElement.querySelector(`#${inputElement.id}-error`) // нашли id span елемента
+  inputElement.classList.add(inputErrorClass)
+  errorElement.classList.add(errorClass)
+  errorElement.textContent = inputElement.validationMessage
+}
+
+// функция проверки кнопки на валидность
+const toggleButtonState = (formElement, buttonElement, config) => {
+  const { inactiveButtonClass, } = config
+  const isFormValid = formElement.checkValidity()
+  buttonElement.classList.toggle(inactiveButtonClass, !isFormValid)
+  buttonElement.disabled = !isFormValid
+}
+
+// эта функция будет запускаться при вводе в поля input'ов
+const checkInputValidity = (formElement, inputElement, config) => {
+  if (inputElement.validity.valid) {
+      hideInputError(formElement, inputElement, config)
+  } else {
+      showInputError(formElement, inputElement, config)
   }
-  
-  const showInputError = (formElement, inputElement, errorMessage, {inputErrorClass, errorClass} ) => {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.add(inputErrorClass);
-    errorElement.textContent = errorMessage;
-    errorElement.classList.add(errorClass);
-  };
-  
-  const checkInputValidity = (formElement, inputElement, config) => {
-    if (inputElement.validity.valid) {
-        hideInputError(formElement, inputElement, config);
-    } else {
-        showInputError(formElement, inputElement, inputElement.validationMessage, config);
-    }
-  }
-  
-  const toggleButtonState = (formElement, buttonElement, inactiveButtonClass) => {
-    const isFormValid = formElement.checkValidity();
-    buttonElement.disabled = !isFormValid;
-    buttonElement.classList.toggle(inactiveButtonClass, !isFormValid)
-  }
-  
-  const setEventListeners = (formElement, config) => {
-    const {
-        inputSelector,
-        submitButtonSelector,
-        inactiveButtonClass,
-        inputErrorClass,
-        errorClass
-    } = config
-    const inputList = Array.from(formElement.querySelectorAll(inputSelector));
-    const buttonElement = formElement.querySelector(submitButtonSelector);
-    toggleButtonState(formElement, buttonElement, inactiveButtonClass);
-    inputList.forEach((inputElement) => {
+}
+
+const setEventListeners = (formElement, config) => {
+  const { inputSelector, submitButtonSelector, } = config
+  formElement.addEventListener('submit', (e) => {
+    e.preventDefault() // сбрасывает перезагрузку страници при отправке формы
+  })
+  const inputList = Array.from(formElement.querySelectorAll(inputSelector))
+  const buttonElement = formElement.querySelector(submitButtonSelector)
+  toggleButtonState(formElement, buttonElement, config)
+  inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-          checkInputValidity(formElement, inputElement, { errorClass, inputErrorClass });
-          toggleButtonState(formElement, buttonElement, inactiveButtonClass);
-      });
-  });
-    };
-  
-    const enableValidation = (config) => {
-      const { formSelector, ...props } = config;
-      const formList = Array.from(document.querySelectorAll(formSelector));
-      formList.forEach((formElement) => {
-          formElement.addEventListener('submit', (evt) => {
-              evt.preventDefault();
-          });
-          setEventListeners(formElement, props);
+          checkInputValidity(formElement, inputElement, config)
+          toggleButtonState(formElement, buttonElement, config)
       })
-  };
+  })
+}
+
+const enableValidation = (config) => {
+  const { formSelector } = config // диструкторизация
+  const forms = document.querySelectorAll(formSelector)
+  forms.forEach((form) => {
+    setEventListeners(form, config)
+  })
+}
