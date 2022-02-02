@@ -49,6 +49,11 @@ export class FormValidator {
     })
   }
 
+  resetValidation() {
+    this._form.reset()
+    this._toggleButtonState()
+  }
+
   enableValidation() {
     this._setEventListeners()
   }

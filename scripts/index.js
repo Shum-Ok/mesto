@@ -2,7 +2,6 @@ import { Card } from './Card.js'
 import { FormValidator } from './FormValidator.js' 
 
 /* const */
-
 // Массив из объектов стандартных карточек
 const initialCards = [
   {
@@ -72,32 +71,27 @@ const userName = document.querySelector('.profile__user-name');
 const userJop = document.querySelector('.profile__user-jop');
 const profileForm = popupTypeEdit.querySelector('.popup__form');
 
-/* Проходит по массиву и создает карточки */
-initialCards.forEach(item => {
-  const card = new Card(item, template, handleCardClick);
-  card.getView(elements); // elements - это где будут отображаться карточки
-})
+// Константы валидиции для форм
+const formValidProfile = new FormValidator(validationConfig, profileForm)
+const formValidCard = new FormValidator(validationConfig, addCardForm)
+
 
 /* Function */
-// Функция запуска валидации
-function startValidation(config) {
-  const { formSelector } = config
-  const forms = document.querySelectorAll(formSelector)
-  forms.forEach((formElement) => {
-    const form = new FormValidator(config, formElement)
-    form.enableValidation()
-  })
-}
-
 // Функция создания карточки
 function createNewCard(e) {
   e.preventDefault();
   const card = new Card({name: inputCardName.value, link: inputCardUrl.value}, template, handleCardClick);
-  card.getView(elements);
-  inputCardName.value = '';
-  inputCardUrl.value = '';
+  elements.append(card.createCard())
   closePopup(popupTypeCard);
-  startValidation(validationConfig)
+  formValidCard.resetValidation()
+}
+
+// Функция проходит по массиву, создает карточки для каждого элемента и возвражает на страницу
+function displayCards(cards) {
+  cards.forEach(item => {
+    const card = new Card(item, template, handleCardClick);
+    elements.append(card.createCard())
+  })
 }
 
 // открывает popup карточки
@@ -109,22 +103,19 @@ function handleCardClick(name, link) {
   openPopup(popupImage); // открывает попап с картинкой
 };
 
-
 // Профайл
 function openPopupProfile() {
   openPopup(popupTypeEdit);
   nameInput.value = userName.textContent;
   jobInput.value = userJop.textContent;
-  startValidation(validationConfig)
+  formValidProfile.resetValidation()
 };
-
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   userName.textContent = nameInput.value; // Получите значение полей из свойства value
   userJop.textContent = jobInput.value;
   closePopup(popupTypeEdit);
 };
-
 
 // Открытие popup'оф
 function openPopup(popup) {
@@ -153,8 +144,12 @@ function clickOverlay (evt) {
 };
 
 /* Запуск функций */
-// Запуск функции валидации
-startValidation(validationConfig)
+// Запуск метода валидации для каждой из форм
+formValidProfile.enableValidation()
+formValidCard.enableValidation()
+
+// Запуск функции создания карточек для массива с заготовками
+displayCards(initialCards)
 
 /* EventListeners */
 // Popup добавления нового места

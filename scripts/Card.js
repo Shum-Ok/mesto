@@ -32,7 +32,7 @@ export class Card {
     this._cardImg.addEventListener('click', () => this._functionCardClick(this._elementCardName, this._elementCardLink))
   }
 
-  getView(container) {
+  createCard() {
     this._createView()
 
     this._cardTitle = this._templateView.querySelector('.element__title')
@@ -44,6 +44,6 @@ export class Card {
 
     this._addEventListeners()
     
-    container.append(this._templateView)
+    return this._templateView
   }
 }
