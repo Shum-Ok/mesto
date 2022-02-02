@@ -83,7 +83,6 @@ function createNewCard(e) {
   const card = new Card({name: inputCardName.value, link: inputCardUrl.value}, template, handleCardClick);
   elements.append(card.createCard())
   closePopup(popupTypeCard);
-  formValidCard.resetValidation()
 }
 
 // Функция проходит по массиву, создает карточки для каждого элемента и возвражает на страницу
@@ -92,6 +91,14 @@ function displayCards(cards) {
     const card = new Card(item, template, handleCardClick);
     elements.append(card.createCard())
   })
+}
+
+// открывает popup создание новой карточки
+function openPopupCard() {
+  openPopup(popupTypeCard)
+  inputCardName.value = ''
+  inputCardUrl.value = ''
+  formValidCard.resetValidation()
 }
 
 // открывает popup карточки
@@ -154,7 +161,7 @@ displayCards(initialCards)
 /* EventListeners */
 // Popup добавления нового места
 addCardForm.addEventListener('submit', createNewCard);
-addButton.addEventListener('click', () => openPopup(popupTypeCard)); // открывает popup добавления места
+addButton.addEventListener('click', openPopupCard); // открывает popup добавления места
 closeButtonCard.addEventListener('click', () => closePopup(popupTypeCard)); // закрывает popup длбавления места
 
 // Popup открытой карточки
