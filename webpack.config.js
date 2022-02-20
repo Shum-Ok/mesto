@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: { main: './pages/index.js'}, //сборку проекта нужно осуществлять с этого файла
+  entry: { main: './src/pages/index.js'}, //сборку проекта нужно осуществлять с этого файла
   output: { // куда поместить нашу сборку 
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
@@ -53,7 +53,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({template: './index.html'}),
+    new HtmlWebpackPlugin({template: './src/index.html'}),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
   ] 
