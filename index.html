@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Место</title>
   <!-- закоментирвать импорт css при сборке WebPack'ом -->
-  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
+  <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="root">
   <header class="header root__header">
-    <!-- <img src="./images/logo.svg" alt="Логотип" class="logo root__logo"> -->
-    <img src="<%=require('./images/logo.svg')%>" alt="Логотип" class="logo root__logo">
+    <img src="./images/logo.svg" alt="Логотип" class="logo root__logo">
+    <!-- <img src="<%=require('./images/logo.svg')%>" alt="Логотип" class="logo root__logo"> -->
   </header>
   <main class="content">
     <section class="profile content__profile">
-      <!-- <img src="./images/avatar.jpg" alt="Фото профеля" class="profile__avatar"> -->
-      <img src="<%=require('./images/avatar.jpg')%>" alt="Фото профеля" class="profile__avatar">
+      <img src="./images/avatar.jpg" alt="Фото профеля" class="profile__avatar">
+      <!-- <img src="<%=require('./images/avatar.jpg')%>" alt="Фото профеля" class="profile__avatar"> -->
         <h1 class="profile__user-name">Жак-Ив Кусто</h1>
         <p class="profile__user-jop">Исследователь океана</p>
         <button type="button" class="edit-profile profile__edit-profile">
-          <!-- <img src="./images/icon-edit.svg" alt="Редактировать профиль" class="edit-profile__icon"> -->
-          <img src="<%=require('./images/icon-edit.svg')%>" alt="Редактировать профиль" class="edit-profile__icon">
+          <img src="./images/icon-edit.svg" alt="Редактировать профиль" class="edit-profile__icon">
+          <!-- <img src="<%=require('./images/icon-edit.svg')%>" alt="Редактировать профиль" class="edit-profile__icon"> -->
         </button>
       <button type="button" class="add-button profile__add-button">
-        <!-- <img src="./images/icon-add.svg" alt="Добавить" class="add-button__icon"> -->
-        <img src="<%=require('./images/icon-add.svg')%>" alt="Добавить" class="add-button__icon">
+        <img src="./images/icon-add.svg" alt="Добавить" class="add-button__icon">
+        <!-- <img src="<%=require('./images/icon-add.svg')%>" alt="Добавить" class="add-button__icon"> -->
       </button>
     </section>
   
@@ -84,7 +84,6 @@
     </article>
   </template>
 
-  <!-- закоментировать подключение js при сборке WebPack'ом -->
   <script type="module" src="./pages/index.js"></script>
 </body>
 </html>
