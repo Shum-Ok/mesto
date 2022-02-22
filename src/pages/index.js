@@ -7,7 +7,7 @@ import { PopupWithForm } from '../components/PopupWithForm.js'
 import { UserInfo } from '../components/UserInfo.js'
 
 // Раскоментировать при сборке WebPack'ом
-// import '../pages/index.css'
+import '../pages/index.css'
 
 // /* const */
 import {
