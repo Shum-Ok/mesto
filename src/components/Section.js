@@ -3,7 +3,7 @@ export class Section {
       this._items = items
       this._renderer = renderer
 
-      this._container = container
+      this._container = document.querySelector(container)
     }
 
     setItems() {
@@ -13,6 +13,6 @@ export class Section {
     }
 
     addItem(element) {
-      this._container.append(element);
+      this._container.prepend(element); //.append(element);
     }
 }

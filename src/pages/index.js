@@ -13,17 +13,13 @@ import '../pages/index.css'
 import {
   initialCards,
   validationConfig,
-  elements,
   template,
   addButton,
-  popupTypeCard,
   inputCardName,
   inputCardUrl,
   addCardForm,
-  popupImage,
   imgUrl,
   imgName,
-  popupTypeEdit,
   editProfile,
   nameInput,
   jobInput,
@@ -38,34 +34,38 @@ const formValidCard = new FormValidator(validationConfig, addCardForm)
 // константа класса юзерФормы
 const userData = new UserInfo({ name: '.profile__user-name', info: '.profile__user-jop', })
 
+function cardCreate(item) { 
+  const cardItem = new Card(item, template, handleCardClick) 
+  const cardElenent = cardItem.createCard()
+  return cardElenent
+}
+
 // константа класса реализации карточки в DOM
-const cardSection = new Section({
-    items: initialCards,
-    renderer: (item) => {
-      const card = new Card(item, template, handleCardClick)
-      const cardElenent = card.createCard()
-      cardSection.addItem(cardElenent)
-      },
+const cardSection = new Section({ 
+  items: initialCards, 
+  renderer: (item) => { 
+    cardSection.addItem(cardCreate(item)) 
     }, 
-    elements)
+  },  
+  '.elements')
 
 // константы под классов popup'а
-const popupCardImg = new PopupWithImage({ selectorPopup: popupImage }, imgUrl, imgName)
-const popupCardAdd = new PopupWithForm({ 
-      selectorPopup: popupTypeCard,
-      functionPopupForm: () => {
-        const card = new Card({name: inputCardName.value, link: inputCardUrl.value}, template, handleCardClick);
-        elements.append(card.createCard())
-      }
-    })
-const popupProfileEdit = new PopupWithForm({ 
-      selectorPopup: popupTypeEdit, 
-      functionPopupForm: () => {
-        userData.setUserInfo({ name: nameInput.value, info: jobInput.value, })
+const popupCardImg = new PopupWithImage({ selectorPopup: '.popup_type_image' }, imgUrl, imgName) 
+const popupCardAdd = new PopupWithForm({  
+      selectorPopup: '.popup_type_card', 
+      functionPopupForm: (data) => { 
+        cardSection.addItem(cardCreate({ name: data['card-name'], link: data['card-url'] }))
+      } 
+    }) 
+
+const popupProfileEdit = new PopupWithForm({  
+      selectorPopup: '.popup_type_edit',  
+      functionPopupForm: (data) => { 
+        userData.setUserInfo({ name: data['user-name'], info: data['user-jop'] })
       }})
 
 /* Function */
-// открывает popup создание новой карточки
+// открывает popup'а 'создание новой карточки'
 function openPopupCard() {
   popupCardAdd.open()
   inputCardName.value = ''
