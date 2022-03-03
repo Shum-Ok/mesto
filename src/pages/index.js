@@ -9,7 +9,7 @@ import { UserInfo } from '../components/UserInfo.js'
 // Раскоментировать при сборке WebPack'ом
 import '../pages/index.css'
 
-// /* const */
+ /* const */
 import {
   initialCards,
   validationConfig,
