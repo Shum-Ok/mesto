@@ -50,6 +50,7 @@ export const popupTypeCard = document.querySelector('.popup_type_card');
 export const inputCardName = popupTypeCard.querySelector('.popup__input_card_name'); 
 export const inputCardUrl = popupTypeCard.querySelector('.popup__input_card_url'); 
 export const addCardForm = popupTypeCard.querySelector('.popup__form');
+export const deleteCard = popupTypeCard.querySelector('.element__delete');
 
 // Для popup'a открытой карточки
 export const popupImage = document.querySelector('.popup_type_image');
@@ -62,3 +63,9 @@ export const editProfile = document.querySelector('.edit-profile');
 export const nameInput = document.querySelector('.popup__input_string_name');
 export const jobInput = document.querySelector('.popup__input_string_jop');
 export const profileForm = popupTypeEdit.querySelector('.popup__form');
+
+// Для popup'a смены аватара
+export const avatarButton = document.querySelector('.profile__avatar-button');
+export const popupAvavtarEdit = document.querySelector('.popup_type_edit-avatar');
+export const avatarForm = popupAvavtarEdit.querySelector('.popup__form');
+export const inputAvatarUrl = popupAvavtarEdit.querySelector('.popup__input_avatar_url');

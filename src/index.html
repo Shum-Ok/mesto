@@ -13,11 +13,16 @@
     <img src="<%=require('./images/logo.svg')%>" alt="Логотип" class="logo root__logo">
   </header>
   <main class="content">
+
+
     <section class="profile content__profile">
-      <!-- <img src="./images/avatar.jpg" alt="Фото профеля" class="profile__avatar"> -->
-      <img src="<%=require('./images/avatar.jpg')%>" alt="Фото профеля" class="profile__avatar">
-        <h1 class="profile__user-name">Жак-Ив Кусто</h1>
-        <p class="profile__user-jop">Исследователь океана</p>
+      <div class="profile__avatar-img">
+        <!-- <img src="./images/avatar.jpg" alt="Фото профеля" class="profile__avatar"> -->
+        <img src="<%=require('./images/avatar.jpg')%>" alt="Фото профеля" class="profile__avatar">
+        <button title="Загрузить аватар" class="profile__avatar-button"></button>
+      </div>
+        <h1 class="profile__user-name"></h1>
+        <p class="profile__user-jop"></p>
         <button type="button" class="edit-profile profile__edit-profile">
           <!-- <img src="./images/icon-edit.svg" alt="Редактировать профиль" class="edit-profile__icon"> -->
           <img src="<%=require('./images/icon-edit.svg')%>" alt="Редактировать профиль" class="edit-profile__icon">
@@ -27,6 +32,7 @@
         <img src="<%=require('./images/icon-add.svg')%>" alt="Добавить" class="add-button__icon">
       </button>
     </section>
+
   
     <section class="elements content__elements">
       <!-- тут отображаются карточки -->
@@ -42,11 +48,23 @@
       <button type="button" class="popup__close-button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
       <form name="edit-form" class="popup__form" novalidate>
-        <input type="text" name="user-name" id="name" placeholder="Имя" class="popup__input popup__input_string_name" minlength="2" maxlength="40" required>
+        <input id="name" type="text" name="name" placeholder="Имя" class="popup__input popup__input_string_name" minlength="2" maxlength="40" required>
         <span id="name-error" class="popup__error"></span>
-        <input id="profession" type="text" name="user-jop" placeholder="Работа" class="popup__input popup__input_string_jop" minlength="2" maxlength="200" required>
+        <input id="profession" type="text" name="about" placeholder="Работа" class="popup__input popup__input_string_jop" minlength="2" maxlength="200" required>
         <span id="profession-error" class="popup__error"></span>
         <button type="submit" class="popup__save-button">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_type_edit-avatar">
+    <div class="popup__window">
+      <button type="button" class="popup__close-button"></button>
+      <h3 class="popup__title">Обновить аватар</h3>
+      <form name="edit-form" class="popup__form" novalidate>
+        <input id="avatar" type="url" name="link" placeholder="Ссылка на картинку" class="popup__input popup__input_avatar_url" required>
+        <span id="avatar-error" class="popup__error"></span>
+        <button type="submit" class="popup__save-button">Отправить</button>
       </form>
     </div>
   </div>
@@ -56,11 +74,21 @@
       <button type="button" class="popup__close-button"></button>
       <h3 class="popup__title">Новое место</h3>
       <form name="edit-form" class="popup__form popup__form_card" novalidate>
-        <input id="card-name" type="text" name="card-name" placeholder="Название места" class="popup__input popup__input_card_name" minlength="2" maxlength="30" required>
+        <input id="card-name" type="text" name="name" placeholder="Название места" class="popup__input popup__input_card_name" minlength="2" maxlength="30" required>
         <span id="card-name-error" class="popup__error"></span>
-        <input id="cardUrl" type="url" name="card-url" placeholder="Ссылка на картинку" class="popup__input popup__input_card_url" required>
+        <input id="cardUrl" type="url" name="link" placeholder="Ссылка на картинку" class="popup__input popup__input_card_url" required>
         <span id="cardUrl-error" class="popup__error"></span>
-        <button type="submit" class="popup__save-button">Создать</button>
+        <button type="submit" class="popup__save-button">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_type_delete">
+    <div class="popup__window">
+      <button type="button" class="popup__close-button"></button>
+      <h3 class="popup__title">Вы уверены?</h3>
+      <form name="edit-form" class="popup__form popup__form_delete" novalidate>
+        <button type="submit" class="popup__save-button">Да</button>
       </form>
     </div>
   </div>
@@ -79,10 +107,13 @@
       <img src="." alt="нет картинки" class="element__photo">
       <div class="element__text">
         <h2 class="element__title">Название</h2>
-        <button type="button" class="element__heart"></button>
+        <div>
+          <button type="button" class="element__heart"></button><br>
+          <span class="element__heart-count"></span>
+        </div>
       </div>
     </article>
-  </template>
+  </template> 
   <!-- закоментирвать импорт css при сборке WebPack'ом -->
   <!-- <script type="module" src="./pages/index.js"></script> -->
 </body>

@@ -12,7 +12,9 @@
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/content/__profile/content__profile.css);
+@import url(../blocks/profile/__avatar-img/profile__avatar-img.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__avatar-button/profile__avatar-button.css);
 @import url(../blocks/profile/__user-name/profile__user-name.css);
 @import url(../blocks/profile/__user-jop/profile__user-jop.css);
 
@@ -30,10 +32,12 @@
 @import url(../blocks/content/__elements/content__elements.css);
 @import url(../blocks/element/__photo/element__photo.css);
 @import url(../blocks/element/__delete/element__delete.css);
+@import url(../blocks/element/__delete/_visible/element__delete_visible.css); 
 @import url(../blocks/element/__text/element__text.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__heart/element__heart.css);
 @import url(../blocks/element/__heart-active/element__heart-active.css);
+@import url(../blocks/element/__heart-count/element__heart-count.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/root/__footer/root__footer.css);
@@ -44,6 +48,7 @@
 @import url(../blocks/popup/__window/popup__window.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__form/_delete/popup__form_delete.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__save-button/popup__save-button.css);
 @import url(../blocks/popup/__save-button/_disabled/popup__save-button_disabled.css);
@@ -54,6 +59,7 @@
 @import url(../blocks/popup/__input/_type/popup__input_type_error.css);
 @import url(../blocks/popup/_type/popup_type_edit.css);
 @import url(../blocks/popup/_type/popup_type_card.css);
+@import url(../blocks/popup/_type/popup_type_delete.css);
 
 @import url(../blocks/popup/_type/popup_type_image.css);
 @import url(../blocks/popup/__image-window/popup__image-window.css);
