@@ -32,7 +32,7 @@
 @import url(../blocks/content/__elements/content__elements.css);
 @import url(../blocks/element/__photo/element__photo.css);
 @import url(../blocks/element/__delete/element__delete.css);
-@import url(../blocks/element/__delete/_visible/element__delete_visible.css); 
+@import url(../blocks/element/__delete/_visible/element__delete_visible.css);
 @import url(../blocks/element/__text/element__text.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__heart/element__heart.css);
