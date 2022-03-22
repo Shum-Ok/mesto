@@ -47,7 +47,7 @@
     <div class="popup__window">
       <button type="button" class="popup__close-button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form name="edit-form" class="popup__form" novalidate>
+      <form name="edit-form-profile" class="popup__form" novalidate>
         <input id="name" type="text" name="name" placeholder="Имя" class="popup__input popup__input_string_name" minlength="2" maxlength="40" required>
         <span id="name-error" class="popup__error"></span>
         <input id="profession" type="text" name="about" placeholder="Работа" class="popup__input popup__input_string_jop" minlength="2" maxlength="200" required>
@@ -61,7 +61,7 @@
     <div class="popup__window">
       <button type="button" class="popup__close-button"></button>
       <h3 class="popup__title">Обновить аватар</h3>
-      <form name="edit-form" class="popup__form" novalidate>
+      <form name="edit-form-avatar" class="popup__form" novalidate>
         <input id="avatar" type="url" name="link" placeholder="Ссылка на картинку" class="popup__input popup__input_avatar_url" required>
         <span id="avatar-error" class="popup__error"></span>
         <button type="submit" class="popup__save-button">Отправить</button>
@@ -73,7 +73,7 @@
     <div class="popup__window">
       <button type="button" class="popup__close-button"></button>
       <h3 class="popup__title">Новое место</h3>
-      <form name="edit-form" class="popup__form popup__form_card" novalidate>
+      <form name="edit-form-card" class="popup__form popup__form_card" novalidate>
         <input id="card-name" type="text" name="name" placeholder="Название места" class="popup__input popup__input_card_name" minlength="2" maxlength="30" required>
         <span id="card-name-error" class="popup__error"></span>
         <input id="cardUrl" type="url" name="link" placeholder="Ссылка на картинку" class="popup__input popup__input_card_url" required>
@@ -87,7 +87,7 @@
     <div class="popup__window">
       <button type="button" class="popup__close-button"></button>
       <h3 class="popup__title">Вы уверены?</h3>
-      <form name="edit-form" class="popup__form popup__form_delete" novalidate>
+      <form name="edit-form-delete" class="popup__form popup__form_delete" novalidate>
         <button type="submit" class="popup__save-button">Да</button>
       </form>
     </div>

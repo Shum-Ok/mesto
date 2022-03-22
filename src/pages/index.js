@@ -39,22 +39,36 @@ const api = new Api({
   }
 })
 
-api.getUser()
-  .then((user) => { // получаем объект User'а
+api.getAllData()
+  .then(([data, user]) => {
     userId = user._id
     userData.setUserInfo(user.name, user.about,) // вставляем из объекта User нужные данные, name и about
     userData.setUserAvatar(user.avatar)
-  })
-  .catch(err => console.log(err))
 
-api.getInitialCards()
-  .then((data) => {
     data.forEach((item) => {
       const card = cardCreate(item).createCard()
       cardSection.addItemServer(card)
     })
   })
   .catch(err => console.log(err))
+
+
+// api.getUser()
+//   .then((user) => { // получаем объект User'а
+//     userId = user._id
+//     userData.setUserInfo(user.name, user.about,) // вставляем из объекта User нужные данные, name и about
+//     userData.setUserAvatar(user.avatar)
+//   })
+//   .catch(err => console.log(err))
+
+// api.getInitialCards()
+//   .then((data) => {
+//     data.forEach((item) => {
+//       const card = cardCreate(item).createCard()
+//       cardSection.addItemServer(card)
+//     })
+//   })
+//   .catch(err => console.log(err))
 
 // Константы классов валидиции для форм
 const formValidProfile = new FormValidator(validationConfig, profileForm)
@@ -107,15 +121,14 @@ function cardCreate(item) {
     template, 
     handleCardClick,
     (id) => {
-      console.log(`открылся попам удаления карточки`)
       popupDeletion.open()
       popupDeletion.changeSubmitHandler(() => {
         api.deleteCard(id)
-          .then(res => {
-            console.log(res)
+          .then(() => {
             cardItem.deleteCard()
             popupDeletion.close()
           })
+          .catch(err => console.log(err))
       })
     },
     (id) => {
@@ -124,11 +137,13 @@ function cardCreate(item) {
         .then((res) => {
           cardItem.setLikes(res.likes)
         })
+        .catch(err => console.log(err))
       } else {
         api.addLike(id)
         .then((res) => {
           cardItem.setLikes(res.likes)
         })
+        .catch(err => console.log(err))
       }
     },
     userId,
@@ -188,6 +203,7 @@ function handleProfileFormSubmit(data) {
       userData.setUserInfo(user.name, user.about)
       popupProfileEdit.close()
     })
+    .catch(err => console.log(err))
 }
 
 // открывает popup редактирования профиля

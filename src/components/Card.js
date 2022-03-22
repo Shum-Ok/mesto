@@ -21,6 +21,7 @@ export class Card {
 
   deleteCard() {
     this._templateView.remove()
+    this._templateView = null
   }
 
   isLiked() {

@@ -2,6 +2,7 @@ export class FormValidator {
   constructor(config, form) {
     this._config = config
     this._form = form
+    this._buttonElement = this._form.querySelector(this._config.submitButtonSelector)
   }
 
   _hideInputError(inputElement) {
@@ -19,8 +20,6 @@ export class FormValidator {
   }
 
   _toggleButtonState() {
-    this._buttonElement = this._form.querySelector(this._config.submitButtonSelector)
-
     const isFormValid = this._form.checkValidity()
     this._buttonElement.classList.toggle(this._config.inactiveButtonClass, !isFormValid)
     this._buttonElement.disabled = !isFormValid
