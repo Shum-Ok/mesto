@@ -1,5 +1,12 @@
 export class Card {
-  constructor(elementCard, templateCard, functionCardClick, openPopupDeleteCard, handelLikeClick, userId) {
+  constructor(
+    elementCard,
+    templateCard,
+    functionCardClick,
+    openPopupDeleteCard,
+    handelLikeClick,
+    userId
+  ) {
     this._elementCardName = elementCard.name
     this._elementCardLink = elementCard.link
     this._elementCardCountLikes = elementCard.likes
@@ -11,7 +18,7 @@ export class Card {
     this._functionCardClick = functionCardClick
     this._openPopupDeleteCard = openPopupDeleteCard
     this._handelLikeClick = handelLikeClick
-    
+
     //this._removeItem = this._removeItem.bind(this)
   }
 
@@ -25,7 +32,9 @@ export class Card {
   }
 
   isLiked() {
-    const isLikeUser = this._elementCardCountLikes.find(user => user._id === this._userId)
+    const isLikeUser = this._elementCardCountLikes.find(
+      (user) => user._id === this._userId
+    )
     return isLikeUser
   }
 
@@ -44,9 +53,15 @@ export class Card {
   }
 
   _addEventListeners() {
-    this._cardLiked.addEventListener('click', () => this._handelLikeClick(this._elementCardId))
-    this._cardRemove.addEventListener('click', () => this._openPopupDeleteCard(this._elementCardId))
-    this._cardImg.addEventListener('click', () => this._functionCardClick(this._elementCardName, this._elementCardLink))
+    this._cardLiked.addEventListener('click', () =>
+      this._handelLikeClick(this._elementCardId)
+    )
+    this._cardRemove.addEventListener('click', () =>
+      this._openPopupDeleteCard(this._elementCardId)
+    )
+    this._cardImg.addEventListener('click', () =>
+      this._functionCardClick(this._elementCardName, this._elementCardLink)
+    )
   }
 
   createCard() {
@@ -61,7 +76,7 @@ export class Card {
     this._cardImg.src = this._elementCardLink
     this._cardImg.alt = this._elementCardName
 
-    if (this._elementCardUserId === this._userId) { 
+    if (this._elementCardUserId === this._userId) {
       this._cardRemove.classList.add('element__delete_visible')
     }
 

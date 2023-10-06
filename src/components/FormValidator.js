@@ -2,14 +2,16 @@ export class FormValidator {
   constructor(config, form) {
     this._config = config
     this._form = form
-    this._buttonElement = this._form.querySelector(this._config.submitButtonSelector)
+    this._buttonElement = this._form.querySelector(
+      this._config.submitButtonSelector
+    )
   }
 
   _hideInputError(inputElement) {
     const errorElement = this._form.querySelector(`#${inputElement.id}-error`) // нашли id span елемента
     inputElement.classList.remove(this._config.inputErrorClass)
     errorElement.classList.remove(this._config.errorClass)
-    errorElement.textContent = '' 
+    errorElement.textContent = ''
   }
 
   _showInputError(inputElement) {
@@ -21,7 +23,10 @@ export class FormValidator {
 
   _toggleButtonState() {
     const isFormValid = this._form.checkValidity()
-    this._buttonElement.classList.toggle(this._config.inactiveButtonClass, !isFormValid)
+    this._buttonElement.classList.toggle(
+      this._config.inactiveButtonClass,
+      !isFormValid
+    )
     this._buttonElement.disabled = !isFormValid
   }
 
@@ -50,7 +55,7 @@ export class FormValidator {
 
   resetValidation() {
     this._inputList.forEach((inputElement) => {
-      this._hideInputError(inputElement) // вызывает метод "спраять" для каждого input элемента 
+      this._hideInputError(inputElement) // вызывает метод "спраять" для каждого input элемента
     })
     this._toggleButtonState()
   }
