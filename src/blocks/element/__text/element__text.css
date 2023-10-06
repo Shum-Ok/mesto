@@ -1,9 +1,8 @@
 .element__text {
   background-color: #fff;
+  padding-left: 20px;
   display: flex;
   flex-direction: row;
-  padding-left: 20px;
   justify-content: space-between;
   align-items: center;
-  border-radius: 0 0 10px 10px;
 }

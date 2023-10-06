@@ -52,24 +52,6 @@ api.getAllData()
   })
   .catch(err => console.log(err))
 
-
-// api.getUser()
-//   .then((user) => { // получаем объект User'а
-//     userId = user._id
-//     userData.setUserInfo(user.name, user.about,) // вставляем из объекта User нужные данные, name и about
-//     userData.setUserAvatar(user.avatar)
-//   })
-//   .catch(err => console.log(err))
-
-// api.getInitialCards()
-//   .then((data) => {
-//     data.forEach((item) => {
-//       const card = cardCreate(item).createCard()
-//       cardSection.addItemServer(card)
-//     })
-//   })
-//   .catch(err => console.log(err))
-
 // Константы классов валидиции для форм
 const formValidProfile = new FormValidator(validationConfig, profileForm)
 const formValidCard = new FormValidator(validationConfig, addCardForm)
@@ -176,6 +158,7 @@ function handleCardFormSubmit(item) {
       cardSection.addItemUser(card)
       popupCardAdd.close()
     })
+    .catch(err => console.log(err))
 }
 
 // обрабатыватываем клик по карточке

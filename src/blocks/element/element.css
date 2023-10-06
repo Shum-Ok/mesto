@@ -5,4 +5,5 @@
   grid-template-rows: 282px 80px;
   box-sizing: border-box;
   overflow: hidden;
+  border-radius: 10px;
 }

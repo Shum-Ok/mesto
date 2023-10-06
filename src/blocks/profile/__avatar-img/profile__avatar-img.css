@@ -1,8 +1,11 @@
 .profile__avatar-img {
   position: relative;
+  grid-area: profile__avatar;
   margin: 0;
   padding: 0;
-  grid-area: profile__avatar;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 740px) {
